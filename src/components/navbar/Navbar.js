@@ -5,6 +5,8 @@ import { ImStarFull } from "react-icons/im";
 import { RiContactsLine } from "react-icons/ri";
 import { AiOutlineProfile } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import photoLogo from "../../images/largeLOGO.png";
+
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -13,7 +15,7 @@ const Navbar = () => {
 	return (
 		<nav className="navbar">
 			<Link to="/" className="nav-logo" onClick={() => setOpen(false)}>
-				logo
+				<img src={photoLogo} />
 			</Link>
 
 			<div onClick={() => setOpen(!open)} className="nav-icon">

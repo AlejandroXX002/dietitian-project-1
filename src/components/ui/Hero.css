@@ -1,32 +1,112 @@
+@font-face {
+	font-family: font1;
+	src: url(../../fonts/LEMONMILK-Light.otf);
+}
+
+@font-face {
+	font-family: font2;
+	src: url(../../fonts/LEMONMILK-Bold.otf);
+}
+
 .hero {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
+	position: absolute;
+	top: 0;
+	z-index: -5;
 	width: 100vw;
+	height: 100vh;
 }
 
-img {
-	height: 70%;
+.img-profile {
+	max-width: 100vw;
 }
 
-.intro {
-	height: 90%;
-	margin-top: auto;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
-
-.intro div {
-	color: rebeccapurple;
-	margin: auto;
-	width: 600px;
-}
-
-h1 {
-	font-size: 4rem;
+.hire-button {
+	font-family: font1;
+	font-size: 0.6em;
+	color: black;
+	border: 1px lightblue groove;
+	text-decoration: none;
+	border-radius: 5px;
 	text-align: center;
-	padding: 2rem;
+}
+
+.about-button {
+	font-family: font1;
+	font-size: 0.6em;
+	color: black;
+	border: 1px lightblue groove;
+	text-decoration: none;
+	border-radius: 5px;
+	text-align: center;
+}
+
+@media only screen and (max-width: 700px) {
+	.container {
+		position: relative;
+	}
+
+	.positioning {
+		position: absolute;
+		top: 43%;
+		left: 10%;
+	}
+
+	.about-button {
+		padding: 0.5rem 2rem;
+		display: block;
+		margin-top: 2rem;
+	}
+
+	.hire-button {
+		padding: 0.5rem 2rem;
+		display: block;
+	}
+}
+
+@media only screen and (min-width: 700px) {
+	.hero {
+		background-image: url(../../images/picnic.jpeg);
+		z-index: -5;
+		background-size: cover;
+		position: absolute;
+		overflow: hidden;
+		justify-items: center;
+		align-items: center;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	}
+
+	.img-profile {
+		display: none;
+	}
+
+	.hire-button,
+	.about-button {
+		width: 200px;
+		display: block;
+		margin-left: 5rem;
+		font-size: 1.3rem;
+	}
+
+	.hire-button {
+		margin-bottom: 5rem;
+	}
+
+	.about-button {
+		margin-top: 5rem;
+	}
+
+	h1 {
+		font-size: 4rem;
+		font-family: font2;
+		text-align: center;
+		padding: 2rem;
+	}
+
+	.containers {
+		display: flex;
+		flex-direction: column;
+		margin-top: 3rem;
+		margin-right: auto;
+	}
 }
