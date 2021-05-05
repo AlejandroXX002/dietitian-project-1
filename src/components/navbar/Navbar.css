@@ -15,7 +15,7 @@ body {
 }
 
 .navbar img {
-	padding-top: 1.5rem;
+	padding-top: 0.5rem;
 	max-width: 100%;
 	max-height: 100%;
 }
@@ -125,7 +125,6 @@ body {
 		top: 40px;
 		left: -100%;
 		transition: 0.5s all;
-		z-index: 3;
 	}
 
 	.nav-links.active {

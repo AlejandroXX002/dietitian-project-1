@@ -41,7 +41,7 @@ const Navbar = () => {
 						onClick={() => setOpen(false)}
 					>
 						<ImStarFull className="style-icon" />
-						Testimonios
+						Pacientes
 					</Link>
 				</li>
 				<li className="nav-item">
