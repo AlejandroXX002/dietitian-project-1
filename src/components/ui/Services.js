@@ -5,9 +5,11 @@ import { ServiceData } from "./ServicesData";
 
 const Services = () => {
 	const [isOpen, setIsOpen] = useState(false);
+	const [content, setContenxt] = useState();
 
-	const togglePopup = () => {
+	const togglePopup = (index) => {
 		setIsOpen(!isOpen);
+	const	setContent(ServiceData[index].description)
 	};
 	return (
 		<div className="main-container">
@@ -29,9 +31,9 @@ const Services = () => {
 						</a>
 
 						{isOpen && (
-							<Popup
+							<Popup key={}
 								content={icon.description}
-								handleClose={togglePopup}
+								handleClose={() => togglePopup(index)}
 							/>
 						)}
 						<hr />
