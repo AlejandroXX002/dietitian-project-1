@@ -5,49 +5,137 @@
 
 @font-face {
 	font-family: font2;
-	src: url(../../fonts/LEMONMILK-Bold.otf);
+	src: url(../../fonts/LEMONMILK-Light.otf);
+}
+
+@font-face {
+	font-family: font3;
+	src: url(../../fonts/Taman\ Signature.ttf);
 }
 
 .main-container {
-	background-color: coral;
-	background-size: contain;
-	background-position: center;
-	background-repeat: no-repeat;
-	/* position: absolute;
-	top: 100vh;
-	width: 100%; */
+	background-color: white;
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-}
-
-.main-container h2 {
-	text-align: center;
-	margin: auto;
-	display: block;
-	font-family: font2;
+	width: 100vw;
 }
 
 .service-container {
-	background-color: lightcoral;
-	width: 190px;
-	height: 150px;
-	word-wrap: break-word;
+	width: 300px;
+	min-height: 170px;
 	text-align: center;
-	margin: 0.5rem;
-	border-radius: 10px;
+	margin: 0.3rem 0;
+	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
+	justify-content: space-between;
 }
 
-.service-container h3 {
-	font-family: font2;
-	max-width: inherit;
+.title {
+	font-size: 2.1rem;
+	color: rgb(211, 211, 211, 0.8);
+	text-align: center;
+	font-family: font1;
 }
 
-.icons {
-	font-size: 3rem;
-	margin: 0 auto;
-	color: ghostwhite;
+.link {
+	text-decoration: none;
+	font-size: 0.7rem;
+	font-family: font1;
+	color: black;
+}
+
+.titles-container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.subtitle {
+	color: black;
+	font-family: font3;
+	font-size: 3.1rem;
+	font-weight: lighter;
+	position: absolute;
+	bottom: -20px;
+}
+
+.container-0 hr {
+	width: 90%;
+	margin: auto;
+	border: 3px #777a45 solid;
+}
+.container-1 hr {
+	width: 90%;
+	margin: auto;
+	border: 3px #cc1c5e solid;
+}
+.container-2 hr {
+	width: 90%;
+	margin: auto;
+	border: 3px #eead66 solid;
+}
+.container-3 hr {
+	width: 90%;
+	margin: auto;
+	border: 3px #c2cca7 solid;
+}
+
+.container-3 .title {
+	font-size: 1.8rem;
+}
+
+.container-0 .subtitle {
+	right: 40px;
+}
+
+.container-1 .subtitle,
+.container-2 .subtitle,
+.container-3 .subtitle {
+	right: 55px;
+}
+
+.container-0 .icons img {
+	width: 70px;
+	height: 70px;
+}
+
+.container-2 .icons img,
+.container-1 .icons img,
+.container-3 .icons img {
+	width: 70px;
+	height: 70px;
+}
+
+@media only screen and (min-width: 600px) {
+	.container-0 hr {
+		width: 36%;
+
+		border: 3px #777a45 solid;
+	}
+	.container-1 hr {
+		width: 36%;
+
+		border: 3px #cc1c5e solid;
+	}
+	.container-2 hr {
+		width: 36%;
+
+		border: 3px #eead66 solid;
+	}
+	.container-3 hr {
+		width: 36%;
+
+		border: 3px #c2cca7 solid;
+	}
+
+	/* .service-container {
+		width: 300px;
+		min-height: 180px;
+	} */
+
+	.link {
+		padding: 0;
+	}
 }

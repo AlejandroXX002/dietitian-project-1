@@ -1,8 +1,10 @@
 import React from "react";
-import { Hero } from "./Hero";
-import "./Home.css";
 import Opinions from "./Opinions";
+import Footer from "./Footer";
+import { Hero } from "./Hero";
 import { OpinionsData } from "./OpinionsData";
+import "./Home.css";
+
 import Services from "./Services";
 
 const Home = () => {
@@ -11,6 +13,7 @@ const Home = () => {
 			<Hero />
 			<Services />
 			<Opinions slides={OpinionsData} />
+			<Footer />
 		</div>
 	);
 };

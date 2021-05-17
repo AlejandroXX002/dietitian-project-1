@@ -11,23 +11,31 @@ const Services = () => {
 	};
 	return (
 		<div className="main-container">
-			{ServiceData.map((icon) => {
+			{ServiceData.map((icon, index) => {
 				return (
-					<>
-						<div className="service-container" onClick={togglePopup}>
+					<div
+						className={`service-container container-${index}`}
+						onClick={togglePopup}
+						key={index}
+					>
+						<div className="titles-container">
 							<div className="icons">{icon.icon}</div>
-							<h3>{icon.title}</h3>
-							<a href={icon.link} target="_blank" className="">
-								{icon.linkName}
-							</a>
+							<h2 className="title">{icon.title}</h2>
+							<h4 className="subtitle">{icon.titleTwo}</h4>
 						</div>
+
+						<a href={icon.link} target="_blank" className="link">
+							{icon.linkName}
+						</a>
+
 						{isOpen && (
 							<Popup
 								content={icon.description}
 								handleClose={togglePopup}
 							/>
 						)}
-					</>
+						<hr />
+					</div>
 				);
 			})}
 		</div>

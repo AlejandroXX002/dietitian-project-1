@@ -11,9 +11,20 @@ import "./Navbar.css";
 
 const Navbar = () => {
 	const [open, setOpen] = useState(false);
+	const [navbar, setNavbar] = useState(false);
+
+	const changeBg = () => {
+		if (window.scrollY >= 50) {
+			setNavbar(true);
+		} else {
+			setNavbar(false);
+		}
+	};
+
+	window.addEventListener("scroll", changeBg);
 
 	return (
-		<nav className="navbar">
+		<nav className={navbar ? "navbar nav-fixed" : "navbar"}>
 			<Link to="/" className="nav-logo" onClick={() => setOpen(false)}>
 				<img src={photoLogo} />
 			</Link>

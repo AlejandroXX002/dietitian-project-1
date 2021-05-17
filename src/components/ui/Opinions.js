@@ -6,6 +6,8 @@ import {
 	FaArrowAltCircleLeft,
 } from "react-icons/fa";
 
+import stars from "../../images/5-stars.png";
+
 const Opinions = ({ slides }) => {
 	const [current, setCurrent] = useState(0);
 	const length = slides.length;
@@ -33,9 +35,10 @@ const Opinions = ({ slides }) => {
 						key={index}
 					>
 						{index === current && (
-							<div className="image">
+							<div className={`opinion-${index} opinion-pt`}>
+								<img src={stars} />
+								<div className="client-text">{client.opinion}</div>
 								<div>{client.name}</div>
-								<div>{client.opinion}</div>
 							</div>
 						)}
 					</div>
