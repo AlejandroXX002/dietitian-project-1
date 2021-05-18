@@ -6,6 +6,7 @@ import { OpinionsData } from "./OpinionsData";
 import "./Home.css";
 
 import Services from "./Services";
+import Map from "./Map";
 
 const Home = () => {
 	return (
@@ -13,6 +14,7 @@ const Home = () => {
 			<Hero />
 			<Services />
 			<Opinions slides={OpinionsData} />
+			<Map />
 			<Footer />
 		</div>
 	);

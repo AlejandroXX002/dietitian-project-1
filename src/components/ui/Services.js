@@ -28,12 +28,12 @@ const Services = () => {
 							{icon.linkName}
 						</a>
 
-						{isOpen && (
+						{/* {isOpen && (
 							<Popup
 								content={icon.description}
 								handleClose={togglePopup}
 							/>
-						)}
+						)} */}
 						<hr />
 					</div>
 				);
