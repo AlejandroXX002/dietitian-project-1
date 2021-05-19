@@ -36,6 +36,7 @@ const Services = () => {
               {icon.linkName}
             </a>
 
+
             {isOpen && content && (
               <Popup
                 content={content}
@@ -48,6 +49,19 @@ const Services = () => {
       })}
     </div>
   );
+=======
+						{/* {isOpen && (
+							<Popup
+								content={icon.description}
+								handleClose={togglePopup}
+							/>
+						)} */}
+						<hr />
+					</div>
+				);
+			})}
+		</div>
+	);
 };
 
 export default Services;
