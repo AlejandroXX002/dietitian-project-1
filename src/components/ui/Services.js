@@ -14,8 +14,6 @@ const Services = () => {
    * @param {number} index Index of the element we want to render inside of the Popup
    */
 	const togglePopup = (index) => {
-    console.log('🐞 togglePopup:', index);
-    debugger;
 		setIsOpen(!isOpen); // ⭐️
     if(typeof index !== 'number') {
       return
@@ -23,38 +21,40 @@ const Services = () => {
     setContent(ServiceData[index].description)
 	};
 
+  const renderContainer = (serviceData) => ServiceData.map((icon, index) => {
+    return (
+      <div
+        className={`service-container container-${index}`}
+        onClick={() => togglePopup(index)}
+
+        key={index}
+      >
+        <div className="titles-container">
+          <div className="icons">{icon.icon}</div>
+          <h2 className="title">{icon.title}</h2>
+          <h4 className="subtitle">{icon.titleTwo}</h4>
+        </div>
+
+        <a href={icon.link} rel="noreferrer" target="_blank" className="link">
+          {icon.linkName}
+        </a>
+        <hr />
+      </div>
+    );
+  })
+
+  const renderPopUp = () => isOpen
+  && content && (
+    <Popup
+      content={content}
+      handleClose={() => togglePopup()}
+    />
+      )
+
 	return (
 		<div className="main-container">
-    {console.log('👀 rendered')}
-			{ServiceData.map((icon, index) => {
-				return (
-					<div
-						className={`service-container container-${index}`}
-						onClick={() => togglePopup(index)}
-
-						key={index}
-					>
-						<div className="titles-container">
-							<div className="icons">{icon.icon}</div>
-							<h2 className="title">{icon.title}</h2>
-							<h4 className="subtitle">{icon.titleTwo}</h4>
-						</div>
-
-						<a href={icon.link} rel="noreferrer" target="_blank" className="link">
-							{icon.linkName}
-						</a>
-						<hr />
-					</div>
-				);
-			})}
-      {
-        isOpen
-        && content && (
-          <Popup
-            content={content}
-            handleClose={() => togglePopup()}
-          />
-						)}
+			{renderContainer(ServiceData)}
+      {renderPopUp()}
 		</div>
 	);
 };
