@@ -1,21 +1,37 @@
-import React, { useState } from "react";
 import "./Services.css";
+
+import React, { useState } from "react";
+
 import Popup from "./Popup";
 import { ServiceData } from "./ServicesData";
 
 const Services = () => {
 	const [isOpen, setIsOpen] = useState(false);
+	const [content, setContent] = useState();
 
-	const togglePopup = () => {
-		setIsOpen(!isOpen);
+  /**
+   * Opens or closes the popup, and sets the content we want to show.
+   * @param {number} index Index of the element we want to render inside of the Popup
+   */
+	const togglePopup = (index) => {
+    console.log('🐞 togglePopup:', index);
+    debugger;
+		setIsOpen(!isOpen); // ⭐️
+    if(typeof index !== 'number') {
+      return
+    }
+    setContent(ServiceData[index].description)
 	};
+
 	return (
 		<div className="main-container">
+    {console.log('👀 rendered')}
 			{ServiceData.map((icon, index) => {
 				return (
 					<div
 						className={`service-container container-${index}`}
-						onClick={togglePopup}
+						onClick={() => togglePopup(index)}
+
 						key={index}
 					>
 						<div className="titles-container">
@@ -24,20 +40,21 @@ const Services = () => {
 							<h4 className="subtitle">{icon.titleTwo}</h4>
 						</div>
 
-						<a href={icon.link} target="_blank" className="link">
+						<a href={icon.link} rel="noreferrer" target="_blank" className="link">
 							{icon.linkName}
 						</a>
-
-						{isOpen && (
-							<Popup
-								content={icon.description}
-								handleClose={togglePopup}
-							/>
-						)}
 						<hr />
 					</div>
 				);
 			})}
+      {
+        isOpen
+        && content && (
+          <Popup
+            content={content}
+            handleClose={() => togglePopup()}
+          />
+						)}
 		</div>
 	);
 };
